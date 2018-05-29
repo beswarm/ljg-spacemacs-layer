@@ -33,6 +33,7 @@
             headheight=15pt    % 标准中没有要求页眉的高度，这里设置成
                                % 15pt了
            ]{geometry}
+\\setCJKmainfont[BoldFont={STXihei},ItalicFont={KaiTi}]{STFangsong}
 "
                   ("\\section{%s}" . "\\section*{%s}")
                   ("\\subsection{%s}" . "\\subsection*{%s}")
