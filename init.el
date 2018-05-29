@@ -300,6 +300,15 @@ before packages are loaded. If you are unsure, you should try in setting them in
           ("gnu-cn" . "http://elpa.zilongshanren.com/gnu/")))
 
   (setq dotspacemacs-configuration-layer-path "~/.spacemacs.d/layers/")
+
+  ;; https://orgmode.org/manual/Installation.html
+  ;; 解决spacemacs从elpa加载org和emacs自带org版本不一致的冲突
+  ;; 可以从源下载最新版本的Org，并指定该版本的路径
+  ;; $ cd ~/src/
+  ;; $ git clone https://code.orgmode.org/bzg/org-mode.git
+  ;; $ cd org-mode/
+  ;; $ make autoloads
+  (add-to-list 'load-path "~/org/org-mode/lisp")
   )
 
 (defun dotspacemacs/user-config ()
@@ -338,9 +347,9 @@ you should place your code here."
     (setq org-startup-indented t)
 
     (setq org-agenda-log-mode-items '(clock))
-    ;; (setq org-agenda-include-all-todo t)
-    ;; (setq org-agenda-time-leading-zero t)
-    ;; (setq org-agenda-use-time-grid nil)
+    (setq org-agenda-include-all-todo t)
+    (setq org-agenda-time-leading-zero t)
+    (setq org-agenda-use-time-grid nil)
 
     (setq org-agenda-include-diary nil)
     (setq org-agenda-files (list  "/Users/ljg/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org"
