@@ -31,6 +31,7 @@
           (setq op/site-domain "http://lijigang.github.io/")
           (setq op/theme-root-directory "~/.emacs.d/elpa/org-page-20170806.1924/themes")
           (setq op/theme 'ljg)
+          (setq op/personal-google-analytics-id "UA-49533446-2")
           (setq op/highlight-render 'js)
           (setq op/category-config-alist
             '(("blog"

@@ -292,6 +292,8 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  ;; 子龙山人的国内镜像源
   (setq configuration-layer--elpa-archives
         '(("melpai-cn" . "http://elpa.zilongshanren.com/melpa/")
           ("org-cn"   . "http://elpa.zilongshanren.com/org/")
@@ -336,9 +338,9 @@ you should place your code here."
     (setq org-startup-indented t)
 
     (setq org-agenda-log-mode-items '(clock))
-    (setq org-agenda-include-all-todo t)
-    (setq org-agenda-time-leading-zero t)
-    (setq org-agenda-use-time-grid nil)
+    ;; (setq org-agenda-include-all-todo t)
+    ;; (setq org-agenda-time-leading-zero t)
+    ;; (setq org-agenda-use-time-grid nil)
 
     (setq org-agenda-include-diary nil)
     (setq org-agenda-files (list  "/Users/ljg/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org"
