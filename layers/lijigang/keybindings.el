@@ -11,7 +11,7 @@
 (evil-leader/set-key "oif" 'org-footnote-action)
 
 (evil-leader/set-key "oog" (lambda () (interactive) (find-file "~/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org")))
-(evil-leader/set-key "ool" (lambda () (interactive) (find-file "/Users/ljg/.spacemacs.d/layers/lijigang/keybindings.el")))
+(evil-leader/set-key "ool" (lambda () (interactive) (find-file "/Users/ljg/.spacemacs.d/layers/lijigang/packages.el")))
 
 (evil-leader/set-key "oit" 'insert-day-progress)
 
