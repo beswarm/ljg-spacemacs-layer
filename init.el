@@ -49,7 +49,7 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(org-projectile)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -348,6 +348,28 @@ you should place your code here."
 
     (setq org-default-notes-file "/Users/ljg/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org")
     (setq org-refile-targets '("~/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org" :maxlevel . 3))
+
+
+    ;; 设置快捷键
+    (evil-leader/set-key "oc" 'org-capture)
+    (evil-leader/set-key "oa" 'org-agenda)
+    (evil-leader/set-key "ol" 'org-store-link)
+    (evil-leader/set-key "el" 'eval-print-last-sexp)
+    (evil-leader/set-key "od" 'org-archive-subtree)
+
+    (evil-leader/set-key "oip" 'org-set-property)
+    (evil-leader/set-key "oil" 'org-insert-link)
+    (evil-leader/set-key "ois" 'org-time-stamp)
+    (evil-leader/set-key "oid" 'org-insert-drawer)
+    (evil-leader/set-key "oif" 'org-footnote-action)
+
+    (evil-leader/set-key "oog" (lambda () (interactive) (find-file "~/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org")))
+    (evil-leader/set-key "ool" (lambda () (interactive) (find-file "/Users/ljg/.spacemacs.d/layers/lijigang/packages.el")))
+
+    (evil-leader/set-key "oit" 'insert-day-progress)
+
+    (global-set-key (kbd "C--") 'org-table-insert-hline)
+
     )
 
   ;;;;;;;;;;;;;;
