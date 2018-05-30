@@ -311,7 +311,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; $ git clone https://code.orgmode.org/bzg/org-mode.git
   ;; $ cd org-mode/
   ;; $ make autoloads
-  (add-to-list 'load-path "~/.spacemacs.d/org-mode/lisp")
+  (add-to-list 'load-path "~/Library/Mobile Documents/com~apple~CloudDocs/org/org-mode/lisp")
   )
 
 (defun dotspacemacs/user-config ()
