@@ -349,6 +349,7 @@ you should place your code here."
     ;; 打开org-indent mode
     (setq org-startup-indented t)
 
+    (setq org-agenda-start-on-weekday nil)
     (setq org-agenda-log-mode-items '(clock))
     (setq org-agenda-include-all-todo t)
     (setq org-agenda-time-leading-zero t)
