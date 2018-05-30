@@ -36,11 +36,13 @@ values."
                       :disabled-for org markdown)
      better-defaults
      emacs-lisp
+     osx
      git
      lijigang
      (org :variables
-          org-enable-reveal-js-support t)
-     osx
+          org-enable-reveal-js-support t
+          org-download-screenshot-method "screencapture"
+          org-download-image-dir "~/Downloads")
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
