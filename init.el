@@ -375,7 +375,7 @@ you should place your code here."
     ;; https://opensource.com/article/18/2/how-create-slides-emacs-org-mode-and-revealjs
 
     (require 'ox-reveal)
-    (setq org-reveal-root (concat (expand-file-name "~/.spacemacs.d/resource/reveal.js")))
+    (setq org-reveal-root (concat (expand-file-name "~/Library/Mobile Documents/com~apple~CloudDocs/org/reveal.js")))
     (setq org-reveal-theme "black")
     (setq org-reveal-control t)
     (setq org-reveal-center t)
