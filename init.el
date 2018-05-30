@@ -349,6 +349,15 @@ you should place your code here."
     ;; 打开org-indent mode
     (setq org-startup-indented t)
 
+    (setq org-src-fontify-natively t)
+    ;; stop emacs asking for confirmation when eval source code
+    (setq org-confirm-babel-evaluate nil)
+    ;; Agenda clock report parameters
+
+    (setq org-agenda-prefix-format '((agenda . "%t %s ")))
+    (setq org-agenda-clockreport-parameter-plist
+          '(:link t :maxlevel 6 :fileskip0 t :compact t :narrow 60 :score 0))
+
     (setq org-agenda-start-on-weekday nil)
     (setq org-agenda-log-mode-items '(clock))
     (setq org-agenda-include-all-todo t)
