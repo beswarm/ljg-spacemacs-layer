@@ -308,7 +308,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; $ git clone https://code.orgmode.org/bzg/org-mode.git
   ;; $ cd org-mode/
   ;; $ make autoloads
-  (add-to-list 'load-path "~/org/org-mode/lisp")
+  (add-to-list 'load-path "~/.spacemacs.d/org-mode/lisp")
   )
 
 (defun dotspacemacs/user-config ()
@@ -357,7 +357,6 @@ you should place your code here."
 
     (setq org-default-notes-file "/Users/ljg/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org")
     (setq org-refile-targets '("~/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org" :maxlevel . 3))
-
 
     ;; 设置快捷键
     (evil-leader/set-key "oc" 'org-capture)
