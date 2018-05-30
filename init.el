@@ -38,7 +38,8 @@ values."
      emacs-lisp
      git
      lijigang
-     org
+     (org :variables
+          org-enable-reveal-js-support t)
      osx
      )
    ;; List of additional packages that will be installed without being
@@ -358,6 +359,16 @@ you should place your code here."
     (setq org-default-notes-file "/Users/ljg/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org")
     (setq org-refile-targets '("~/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org" :maxlevel . 3))
 
+    ;; 使用reveal.js来生成html版本的ppt
+    ;; https://opensource.com/article/18/2/how-create-slides-emacs-org-mode-and-revealjs
+
+    (require 'ox-reveal)
+    (setq org-reveal-root (concat (expand-file-name "~/.spacemacs.d/resource/reveal.js")))
+    (setq org-reveal-theme "black")
+    (setq org-reveal-control t)
+    (setq org-reveal-center t)
+    (setq org-reveal-progress t)
+
     ;; 设置快捷键
     (evil-leader/set-key "oc" 'org-capture)
     (evil-leader/set-key "oa" 'org-agenda)
@@ -394,6 +405,9 @@ you should place your code here."
   (setq org-image-actual-width nil)
 
   (global-hl-line-mode -1)
+
+  ;; 打开黄金比例模式, 当前使用的窗口所占比例为0.618
+  (golden-ratio-mode)
 
   ;; 默认把新开的Window显示在右侧
   (setq split-height-threshold nil)
@@ -451,7 +465,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (wttrin xterm-color swiper ivy org-page git mustache simple-httpd ht cnfonts beacon seq reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl unfill mwim helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete evil-magit smeargle orgit magit-gitflow magit magit-popup ghub let-alist helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit with-editor org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (ox-reveal wttrin xterm-color swiper ivy org-page git mustache simple-httpd ht cnfonts beacon seq reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl unfill mwim helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete evil-magit smeargle orgit magit-gitflow magit magit-popup ghub let-alist helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit with-editor org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

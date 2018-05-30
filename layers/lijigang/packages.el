@@ -17,7 +17,8 @@
     cnfonts
     swiper
     wttrin
-    beacon)
+    beacon
+    )
 )
 
 (defun lijigang/init-org-page()
