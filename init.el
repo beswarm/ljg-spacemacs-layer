@@ -42,7 +42,9 @@ values."
      (org :variables
           org-enable-reveal-js-support t
           org-download-screenshot-method "screencapture"
-          org-download-image-dir "~/Downloads")
+          org-download-image-dir (file-name-sans-extension (buffer-name))
+          org-download-heading-lvl nil
+          org-download-timestamp "")
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
