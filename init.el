@@ -396,6 +396,10 @@ you should place your code here."
 
   (global-hl-line-mode -1)
 
+  ;; 默认把新开的Window显示在右侧
+  (setq split-height-threshold nil)
+  (setq split-width-threshold 0)
+
   ;; more useful frame title, that show either a file or a
   ;; buffer name (if the buffer isn't visiting a file)
   (setq frame-title-format
