@@ -436,6 +436,8 @@ you should place your code here."
   (prefer-coding-system 'utf-8)
   (set-default-coding-systems 'utf-8)
   (setq default-buffer-file-coding-system 'utf-8)
+  ;; 时间戳使用英文星期
+  (setq system-time-locale "C")
 
   ;; Agenda clock report parameters
   (setq org-agenda-clockreport-parameter-plist
