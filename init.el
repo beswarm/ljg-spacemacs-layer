@@ -43,7 +43,7 @@ values."
      (org :variables
           org-enable-reveal-js-support t
           org-download-screenshot-method "screencapture"
-          org-download-image-dir (file-name-sans-extension (buffer-name))
+          ;; org-download-image-dir (file-name-sans-extension (buffer-name))
           org-download-heading-lvl nil
           org-download-timestamp "")
      )
@@ -290,7 +290,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
    ))
 
 (defun dotspacemacs/user-init ()
