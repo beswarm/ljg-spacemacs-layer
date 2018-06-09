@@ -34,6 +34,7 @@
           (setq op/theme 'ljg)
           (setq op/personal-google-analytics-id "UA-49533446-2")
           (setq op/highlight-render 'js)
+          (setq op/category-ignore-list '("themes" "assets" "images"))
           (setq op/category-config-alist
             '(("blog"
               :show-meta t
