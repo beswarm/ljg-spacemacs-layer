@@ -14,6 +14,7 @@
 
 (defconst lijigang-packages
   '(org-page
+    dired-icon
     cnfonts
     swiper
     wttrin
@@ -32,7 +33,7 @@
           (setq op/site-domain "http://lijigang.github.io/")
           (setq op/theme-root-directory "~/.emacs.d/elpa/org-page-20170806.1924/themes")
           (setq op/theme 'ljg)
-          (setq op/personal-google-analytics-id "UA-49533446-2")
+          (setq op/personal-google-analytics-id "49533446")
           (setq op/highlight-render 'js)
           (setq op/category-ignore-list '("themes" "assets" "images"))
           (setq op/category-config-alist
@@ -59,6 +60,13 @@
               :category-index nil)))
           (bind-key "C-c M-p" 'op/do-publication-and-preview-site)))
     )
+
+(defun lijigang/init-dired-icon ()
+  "Initialize dired-icon"
+  (add-hook 'dired-mode-hook 'dired-icon-mode)
+  (add-hook 'dired-mode-hook
+            (lambda ()
+              (highlight-lines-matching-regexp "\.org$" 'hi-yellow))))
 
 (defun lijigang/init-cnfonts()
   "Initialize cnfonts"
