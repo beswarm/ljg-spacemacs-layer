@@ -355,9 +355,13 @@ you should place your code here."
     ;; 打开org-indent mode
     (setq org-startup-indented t)
 
-    (setq org-src-fontify-natively t)
-    ;; stop emacs asking for confirmation when eval source code
-    (setq org-confirm-babel-evaluate nil)
+    ;; Let's have pretty source code blocks
+    (setq org-edit-src-content-indentation 0
+          org-src-tab-acts-natively t
+          org-src-fontify-natively t
+          org-confirm-babel-evaluate nil
+          org-support-shift-select 'always)
+
     ;; Agenda clock report parameters
 
     (setq org-agenda-prefix-format '((agenda . "%t %s ")))
@@ -431,6 +435,14 @@ you should place your code here."
   (setq split-height-threshold nil)
   (setq split-width-threshold 0)
 
+
+  ;; Remove the markup characters, i.e., "/text/" becomes (italized) "text"
+  (setq org-hide-emphasis-markers t)
+
+  ;; Turn on visual-line-mode for Org-mode only
+  ;; Also install "adaptive-wrap" from elpa
+  (add-hook 'org-mode-hook 'turn-on-visual-line-mode)
+
   ;; more useful frame title, that show either a file or a
   ;; buffer name (if the buffer isn't visiting a file)
   (setq frame-title-format
@@ -443,6 +455,22 @@ you should place your code here."
 
   ;; 安装XeLaTeX是另外一个故事了..
   (setq Tex-command-default "XeLaTeX")
+
+
+  ;;;;;;;;;;;;;;;;;;
+  ;; 文学编程相关 ;;
+  ;;;;;;;;;;;;;;;;;;
+  ;; Tangle Org files when we save them
+  (defun tangle-on-save-org-mode-file()
+    (when (string= (message "%s" major-mode) "org-mode")
+      (org-babel-tangle)))
+
+  (add-hook 'after-save-hook 'tangle-on-save-org-mode-file)
+
+  ;; Enable the auto-revert mode globally. This is quite useful when you have
+  ;; multiple buffers opened that Org-mode can update after tangling.
+  ;; All the buffers will be updated with what changed on the disk.
+  (global-auto-revert-mode)
 
 
   ;;;;;;;;;;;;;;
@@ -470,6 +498,7 @@ you should place your code here."
   (org-babel-do-load-languages
    'org-babel-load-languages
    '(;; other Babel languages
+     (emacs-lisp . t)
      (plantuml . t)))
 
   (setq org-plantuml-jar-path
