@@ -517,7 +517,7 @@ you should place your code here."
   (setq org-ditaa-jar-path "/Users/ljg/Library/Mobile Documents/com~apple~CloudDocs/org/org-mode/contrib/scripts/ditaa.jar")
 
   (setq org-plantuml-jar-path
-        (expand-file-name "~/lib/plantuml.jar"))
+        (expand-file-name "/Users/ljg/Library/Mobile Documents/com~apple~CloudDocs/org/org-resources/plantuml.jar"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
