@@ -499,7 +499,22 @@ you should place your code here."
    'org-babel-load-languages
    '(;; other Babel languages
      (emacs-lisp . t)
+     (ditaa . t)
      (plantuml . t)))
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; https://github.com/syl20bnr/spacemacs/issues/4926 ;;
+  ;; artist-mode 左键不能画, 状态问题                  ;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (defun artist-mode-toggle-emacs-state ()
+    (if artist-mode
+        (evil-emacs-state)
+      (evil-exit-emacs-state)))
+
+  (unless (eq dotspacemacs-editing-style 'emacs)
+    (add-hook 'artist-mode-hook #'artist-mode-toggle-emacs-state))
+
+  (setq org-ditaa-jar-path "/Users/ljg/Library/Mobile Documents/com~apple~CloudDocs/org/org-mode/contrib/scripts/ditaa.jar")
 
   (setq org-plantuml-jar-path
         (expand-file-name "~/lib/plantuml.jar"))
