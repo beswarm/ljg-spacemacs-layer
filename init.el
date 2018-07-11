@@ -44,7 +44,7 @@ values."
      (org :variables
           org-enable-reveal-js-support t
           org-download-screenshot-method "screencapture"
-          ;; org-download-image-dir (file-name-sans-extension (buffer-name))
+          org-download-image-dir "../images"
           org-download-heading-lvl nil
           org-download-timestamp "")
      )
