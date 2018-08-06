@@ -27,7 +27,7 @@
   (use-package org-page
     :ensure t
     :config (progn
-          (setq op/site-main-title "為學日益, 為道日損")
+          (setq op/site-main-title "捉妖记")
           (setq op/personal-github-link "https://github.com/lijigang")
           (setq op/repository-directory "~/lijigang")
           (setq op/site-domain "http://lijigang.github.io/")
