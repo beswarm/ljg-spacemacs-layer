@@ -549,6 +549,8 @@ you should place your code here."
   (unless (eq dotspacemacs-editing-style 'emacs)
     (add-hook 'artist-mode-hook #'artist-mode-toggle-emacs-state))
 
+  (global-visual-line-mode 1)
+
   (setq org-ditaa-jar-path "/Users/ljg/Library/Mobile Documents/com~apple~CloudDocs/org/org-mode/contrib/scripts/ditaa.jar")
 
   (setq org-plantuml-jar-path
