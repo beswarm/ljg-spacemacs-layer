@@ -41,6 +41,8 @@ values."
      osx
      git
      lijigang
+     (chinese :variables
+              pangu-spacing-real-insert-separtor t)
      (org :variables
           org-enable-reveal-js-support t
           org-download-screenshot-method "screencapture"
@@ -313,8 +315,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq dotspacemacs-configuration-layer-path "~/.spacemacs.d/layers/")
 
   ;; https://orgmode.org/manual/Installation.html
-  ;; 解决spacemacs从elpa加载org和emacs自带org版本不一致的冲突
-  ;; 可以从源下载最新版本的Org，并指定该版本的路径
+  ;; 解决 spacemacs 从 elpa 加载 org 和 emacs 自带 org 版本不一致的冲突
+  ;; 可以从源下载最新版本的 Org，并指定该版本的路径
   ;; $ cd ~/src/
   ;; $ git clone https://code.orgmode.org/bzg/org-mode.git
   ;; $ cd org-mode/
@@ -330,6 +332,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+
   ;;;;;;;;;;;;;;;;;;;;;;;
   ;; org-mode 相关设置 ;;
   ;;;;;;;;;;;;;;;;;;;;;;;
@@ -342,19 +345,19 @@ you should place your code here."
   ;; which will induce conflicts. One way to avoid conflict is to wrap your org
   ;; config code in a with-eval-after-load block like this:
   (with-eval-after-load 'org
-    ;; 设置todo keywords
+    ;; 设置 todo keywords
     (setq org-todo-keywords
           '((sequence "TODO" "HAND" "|" "DONE")))
 
-    ;; 调试好久的颜色，效果超赞！ todo keywords 增加背景色
+    ;; 调试好久的颜色，效果超赞！todo keywords 增加背景色
     (setf org-todo-keyword-faces '(("TODO" . (:foreground "white" :background "#95A5A6"   :weight bold))
                                    ("HAND" . (:foreground "white" :background "#2E8B57"  :weight bold))
                                    ("DONE" . (:foreground "white" :background "#3498DB" :weight bold))))
 
-    ;; 设置bullet list
+    ;; 设置 bullet list
     (setq org-bullets-bullet-list '("☰" "☷" "☯" "☭"))
 
-    ;; 打开org-indent mode
+    ;; 打开 org-indent mode
     (setq org-startup-indented t)
 
     ;; Let's have pretty source code blocks
@@ -416,7 +419,7 @@ you should place your code here."
     (setq org-default-notes-file "/Users/ljg/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org")
     (setq org-refile-targets '("~/Library/Mobile Documents/com~apple~CloudDocs/org/gtd.org" :maxlevel . 3))
 
-    ;; 使用reveal.js来生成html版本的ppt
+    ;; 使用 reveal.js 来生成 html 版本的 ppt
     ;; https://opensource.com/article/18/2/how-create-slides-emacs-org-mode-and-revealjs
 
     (require 'ox-reveal)
@@ -446,6 +449,8 @@ you should place your code here."
 
     (global-set-key (kbd "C--") 'org-table-insert-hline)
 
+    ;; chinese layer related
+    (evil-leader/set-key "lf" 'youdao-dictionary-search-at-point)
     )
 
   ;;;;;;;;;;;;;;
@@ -463,10 +468,10 @@ you should place your code here."
 
   (global-hl-line-mode -1)
 
-  ;; 打开黄金比例模式, 当前使用的窗口所占比例为0.618
+  ;; 打开黄金比例模式, 当前使用的窗口所占比例为 0.618
   (golden-ratio-mode)
 
-  ;; 默认把新开的Window显示在右侧
+  ;; 默认把新开的 Window 显示在右侧
   (setq split-height-threshold nil)
   (setq split-width-threshold 0)
 
@@ -488,7 +493,7 @@ you should place your code here."
   ;; 导出相关 ;;
   ;;;;;;;;;;;;;;
 
-  ;; 安装XeLaTeX是另外一个故事了..
+  ;; 安装 XeLaTeX 是另外一个故事了..
   (setq Tex-command-default "XeLaTeX")
 
 
@@ -568,7 +573,7 @@ you should place your code here."
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
  '(package-selected-packages
    (quote
-    (dired-icon yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode company-anaconda anaconda-mode pythonic web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data niflheim-theme dracula-theme-theme ox-reveal wttrin xterm-color swiper ivy org-page git mustache simple-httpd ht cnfonts beacon seq reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl unfill mwim helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete evil-magit smeargle orgit magit-gitflow magit magit-popup ghub let-alist helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit with-editor org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (chinese-wbim pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib pyim-wbdict pyim pyim-basedict dired-icon yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode company-anaconda anaconda-mode pythonic web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data niflheim-theme dracula-theme-theme ox-reveal wttrin xterm-color swiper ivy org-page git mustache simple-httpd ht cnfonts beacon seq reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl unfill mwim helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete evil-magit smeargle orgit magit-gitflow magit magit-popup ghub let-alist helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-commit with-editor org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
