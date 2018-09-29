@@ -19,6 +19,7 @@
     swiper
     wttrin
     beacon
+    pangu-spacing
     )
 )
 
@@ -98,4 +99,10 @@
     (beacon-mode 1)
     (setq beacon-color "#666600")))
 
+(defun lijigang/init-pangu-spacing()
+  "Initialize pangu-spacing"
+  (use-package pangu-spacing
+    :init
+    (global-pangu-spacing-mode 1)
+    (setq pangu-spacing-real-insert-separtor t)))
 ;;; packages.el ends here

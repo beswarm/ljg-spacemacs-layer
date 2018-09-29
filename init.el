@@ -41,8 +41,6 @@ values."
      osx
      git
      lijigang
-     (chinese :variables
-              pangu-spacing-real-insert-separtor t)
      (org :variables
           org-enable-reveal-js-support t
           org-download-screenshot-method "screencapture"
@@ -322,6 +320,13 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; $ cd org-mode/
   ;; $ make autoloads
   (add-to-list 'load-path "~/Library/Mobile Documents/com~apple~CloudDocs/org/org-mode/lisp")
+
+
+  ;; https://github.com/manateelazycat/
+  ;; 大佬不喜欢 melpa, 插件需要保存到本地, 单独为大佬的插件设置一下存放地址
+  (add-to-list 'load-path "~/Library/Mobile Documents/com~apple~CloudDocs/org/ljg-packages")
+
+  (require 'insert-translated-name)
   )
 
 (defun dotspacemacs/user-config ()
@@ -449,8 +454,6 @@ you should place your code here."
 
     (global-set-key (kbd "C--") 'org-table-insert-hline)
 
-    ;; chinese layer related
-    (evil-leader/set-key "lf" 'youdao-dictionary-search-at-point)
     )
 
   ;;;;;;;;;;;;;;
