@@ -20,6 +20,8 @@
     wttrin
     beacon
     pangu-spacing
+    pyim
+    posframe
     )
 )
 
@@ -105,4 +107,26 @@
     :init
     (global-pangu-spacing-mode 1)
     (setq pangu-spacing-real-insert-separtor t)))
+
+(defun lijigang/init-pyim()
+  "Initialize pyim"
+  (use-package pyim
+    :ensure nil
+    :demand t
+    :config
+    (setq default-input-method "pyim")
+    (setq pyim-default-scheme 'wubi)
+
+    ;; 让 Emacs 启动时自动加载 pyim 词库
+    (add-hook 'emacs-startup-hook
+              #'(lambda () (pyim-restart-1 t)))
+
+    (setq pyim-page-tooltip 'posframe)
+    (setq pyim-punctuation-translate-p '(no yes auto))   ;使用半角标点。
+    (setq pyim-dicts '((:name "基础词库" :file "~/Library/Mobile Documents/com~apple~CloudDocs/3-config/wbdict.pyim")))
+    (global-set-key (kbd "C-9") 'toggle-input-method)
+    ))
+
+(defun lijigang/init-posframe ()
+  (use-package posframe))
 ;;; packages.el ends here
