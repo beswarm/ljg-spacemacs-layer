@@ -113,6 +113,8 @@
   (use-package pyim
     :ensure nil
     :demand t
+    :init
+    (setq pyim-punctuation-translate-p '(no yes auto))
     :config
     (setq default-input-method "pyim")
     (setq pyim-default-scheme 'wubi)
@@ -122,7 +124,6 @@
               #'(lambda () (pyim-restart-1 t)))
 
     (setq pyim-page-tooltip 'posframe)
-    (setq pyim-punctuation-translate-p '(no yes auto))   ;使用半角标点。
     (setq pyim-dicts '((:name "基础词库" :file "~/Library/Mobile Documents/com~apple~CloudDocs/3-config/wbdict.pyim")))
     (global-set-key (kbd "C-9") 'toggle-input-method)
     ))
