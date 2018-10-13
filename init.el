@@ -506,7 +506,7 @@ you should place your code here."
     (when (string= (message "%s" major-mode) "org-mode")
       (org-babel-tangle)))
 
-  (add-hook 'after-save-hook 'tangle-on-save-org-mode-file)
+  ;; (add-hook 'after-save-hook 'tangle-on-save-org-mode-file)
 
   ;; Enable the auto-revert mode globally. This is quite useful when you have
   ;; multiple buffers opened that Org-mode can update after tangling.
