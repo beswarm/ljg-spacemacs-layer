@@ -36,7 +36,7 @@
           (setq op/site-domain "http://lijigang.github.io/")
           (setq op/theme-root-directory "~/.emacs.d/elpa/org-page-20170806.1924/themes")
           (setq op/theme 'ljg)
-          (setq op/personal-google-analytics-id "36d44a2295ffa55a3ab51c6aa7a71733")
+          ;; (setq op/personal-google-analytics-id "36d44a2295ffa55a3ab51c6aa7a71733")
           (setq op/highlight-render 'js)
           (setq op/category-ignore-list '("themes" "assets" "images"))
           (setq op/category-config-alist
