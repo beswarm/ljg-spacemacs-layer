@@ -470,6 +470,7 @@ you should place your code here."
   (setq org-image-actual-width nil)
 
   (global-hl-line-mode -1)
+  (setq-default fill-column 72)
 
   ;; 打开黄金比例模式, 当前使用的窗口所占比例为 0.618
   (golden-ratio-mode)
