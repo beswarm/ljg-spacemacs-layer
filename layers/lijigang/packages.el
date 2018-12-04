@@ -44,7 +44,7 @@
               :show-meta t
               :show-comment t
               :uri-generator op/generate-uri
-              :uri-template "/blog/%t/"
+              :uri-template "/blog/%y/%m/%d/%t/"
               :sort-by :date     ;; how to sort the posts
               :category-index nil) ;; generate category index or not
               ("index"
